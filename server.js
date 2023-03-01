@@ -5,6 +5,7 @@ const passport = require('passport');
 const port = 5000;
 const connectDB = require("./config/database");
 
+
 const app = express();
 
 app.set('views', __dirname + '/views');
@@ -14,6 +15,8 @@ app.engine('jsx', require('express-react-views').createEngine());
 // app.get('/', (req, res) => {
 //     res.send('Hello World!')
 //   })
+
+connectDB();
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}, you better catch it!`);
