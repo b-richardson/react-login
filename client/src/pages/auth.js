@@ -1,41 +1,47 @@
-
 import React, { useState } from "react"
+import { useNavigate } from "react-router";
 
-export default function (props) {
+export default function Auth (props) {
   let [authMode, setAuthMode] = useState("signin")
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+
   // States for checking the errors
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+  // const [submitted, setSubmitted] = useState(false);
+  // const [error, setError] = useState(false);
 
   
   // Handling the name change
   const handleName = (e) => {
     setName(e.target.value);
-    setSubmitted(false);
+    // setSubmitted(false);
   };
  
   // Handling the email change
   const handleEmail = (e) => {
     setEmail(e.target.value);
-    setSubmitted(false);
+    // setSubmitted(false);
   };
  
   // Handling the password change
   const handlePassword = (e) => {
     setPassword(e.target.value);
-    setSubmitted(false);
+    // setSubmitted(false);
   };
 
   // Handling the form submission
-  const handleSubmit = (e) => {
-    console.log([name, email, password])
+  const handleSubmit = async (e) => {
+    console.log({name, email, password})
     console.log('got the data boys');
     e.preventDefault();
+
   };
+
+
+    
+  
 
   // Showing success message
   // const successMessage = () => {
@@ -160,4 +166,4 @@ export default function (props) {
       </form>
     </div>
   )
-}
+};
